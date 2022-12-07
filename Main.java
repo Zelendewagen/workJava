@@ -1,8 +1,10 @@
-//*+Р—Р°РґР°РЅРѕ СѓСЂР°РІРЅРµРЅРёРµ РІРёРґР° q + w = e, q, w, e >= 0. РќРµРєРѕС‚РѕСЂС‹Рµ С†РёС„СЂС‹ РјРѕРіСѓС‚ Р±С‹С‚СЊ Р·Р°РјРµРЅРµРЅС‹ Р·РЅР°РєРѕРј РІРѕРїСЂРѕСЃР°, РЅР°РїСЂРёРјРµСЂ 2? + ?5 = 69. РўСЂРµР±СѓРµС‚СЃСЏ РІРѕСЃСЃС‚Р°РЅРѕРІРёС‚СЊ РІС‹СЂР°Р¶РµРЅРёРµ РґРѕ РІРµСЂРЅРѕРіРѕ СЂР°РІРµРЅСЃС‚РІР°. РџСЂРµРґР»РѕР¶РёС‚СЊ С…РѕС‚СЏ Р±С‹ РѕРґРЅРѕ СЂРµС€РµРЅРёРµ РёР»Рё СЃРѕРѕР±С‰РёС‚СЊ, С‡С‚Рѕ РµРіРѕ РЅРµС‚.
+//Вычислить n-ое треугольного число(сумма чисел от 1до n)
+//Вычислить n!(произведение чисел от 1 до n)
+//Вывести все простые числа от 1до 1000(простые числа-это числа которые делятся только на себя и на единицу без остатка.Чтобы найти остаток от деления используйте оператор%,например 10%3будет равно единице)
+//Реализовать простой калькулятор("введите первое число"..."Введите второе число"..."укажите операцию, которую надо выполнить с этими числами"..."ответ: ...")
+//*+Задано уравнение вида q+w=e,q,w,e>=0.Некоторые цифры могут быть заменены знаком вопроса,например 2?+?5=69.Требуется восстановить выражение до верного равенства.Предложить хотя бы одно решение или сообщить,что его нет.
 
 
-import java.lang.reflect.Type;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -15,12 +17,12 @@ public class Main {
     }
 
     public static int ex1() {
-        System.out.println("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ n");
+        System.out.println("Введите число n");
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int result = 0;
-        for (int i = 1; i < n; i++) {
-            result = n + i;
+        for (int i = 1; i <= n; i++) {
+            result += i;
         }
         return result;
     }
@@ -31,44 +33,47 @@ public class Main {
     }
 
     public static void ex3(int n) {
-        String result = "2, ";
-        for (int i = 2; i != n; i++) {
-            if (i > 7) {
-                if (i % 2 != 0 && i % 3 != 0 && i % 5 != 0 && i % 7 != 0) {
-                    result += i + ", ";
+        String result = "";
+        int temp = 0;
+        for (int i = 2; i < n; i++) {
+            temp = 1;
+            for (int j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    temp = 0;
+                    break;
                 }
-            } else {
-                if (i % 2 != 0) {
-                    result += i + ", ";
-                }
+            }
+            if (temp == 1) {
+                result += i + ", ";
             }
         }
         System.out.println(result);
     }
 
     public static void ex4() {
-        System.out.print("Р’РІРµРґРёС‚Рµ РїРµСЂРІРѕРµ n: ");
+        System.out.print("Введите первое n: ");
         Scanner scanner = new Scanner(System.in);
         int n1 = scanner.nextInt();
-        System.out.print("Р’РІРµРґРёС‚Рµ РІС‚РѕСЂРѕРµ n: ");
+        System.out.print("Введите второе n: ");
         int n2 = scanner.nextInt();
         System.out.print("\033[H\033[J");
-        System.out.println("1: РЎСѓРјРјР°");
-        System.out.println("2: РЈРјРЅРѕР¶РµРЅРёРµ");
-        System.out.println("3: Р”РµР»РµРЅРёРµ");
-        System.out.print("Р’С‹Р±РµСЂРёС‚Рµ РґРµР№СЃС‚РІРёРµ:");
+        System.out.println("Первое число = "+n1);
+        System.out.println("Второе число = "+n2);
+        System.out.println("1: Сумма");
+        System.out.println("2: Умножение");
+        System.out.println("3: Деление");
+        System.out.print("Выберите действие:");
         int mode = scanner.nextInt();
         if (mode == 1) System.out.printf("%d+%d=%d", n1, n2, n1 + n2);
         if (mode == 2) System.out.printf("%dx%d=%d", n1, n2, n1 * n2);
         if (mode == 3) System.out.printf("%d:%d=%d", n1, n2, n1 / n2);
-        else System.out.println("ERROR");
     }
 
     public static void ex5(String q, String w, String e) {
         String[] array = new String[]{q, w, e};
         for (String j : array) {
-            String[]temp = j.split("");
-            System.out.println(temp[0]=="?"); //WTF false ????
+            String[] temp = j.split("");
+            System.out.println(temp[0] == "?"); //WTF false ????
         }
 
 
