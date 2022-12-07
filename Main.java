@@ -1,4 +1,4 @@
-//*+Задано уравнение вида q + w = e, q, w, e >= 0. Некоторые цифры могут быть заменены знаком вопроса, например 2? + ?5 = 69. Требуется восстановить выражение до верного равенства. Предложить хотя бы одно решение или сообщить, что его нет.
+//*+Р—Р°РґР°РЅРѕ СѓСЂР°РІРЅРµРЅРёРµ РІРёРґР° q + w = e, q, w, e >= 0. РќРµРєРѕС‚РѕСЂС‹Рµ С†РёС„СЂС‹ РјРѕРіСѓС‚ Р±С‹С‚СЊ Р·Р°РјРµРЅРµРЅС‹ Р·РЅР°РєРѕРј РІРѕРїСЂРѕСЃР°, РЅР°РїСЂРёРјРµСЂ 2? + ?5 = 69. РўСЂРµР±СѓРµС‚СЃСЏ РІРѕСЃСЃС‚Р°РЅРѕРІРёС‚СЊ РІС‹СЂР°Р¶РµРЅРёРµ РґРѕ РІРµСЂРЅРѕРіРѕ СЂР°РІРµРЅСЃС‚РІР°. РџСЂРµРґР»РѕР¶РёС‚СЊ С…РѕС‚СЏ Р±С‹ РѕРґРЅРѕ СЂРµС€РµРЅРёРµ РёР»Рё СЃРѕРѕР±С‰РёС‚СЊ, С‡С‚Рѕ РµРіРѕ РЅРµС‚.
 
 
 import java.lang.reflect.Type;
@@ -15,7 +15,7 @@ public class Main {
     }
 
     public static int ex1() {
-        System.out.println("Введите число n");
+        System.out.println("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ n");
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int result = 0;
@@ -47,16 +47,16 @@ public class Main {
     }
 
     public static void ex4() {
-        System.out.print("Введите первое n: ");
+        System.out.print("Р’РІРµРґРёС‚Рµ РїРµСЂРІРѕРµ n: ");
         Scanner scanner = new Scanner(System.in);
         int n1 = scanner.nextInt();
-        System.out.print("Введите второе n: ");
+        System.out.print("Р’РІРµРґРёС‚Рµ РІС‚РѕСЂРѕРµ n: ");
         int n2 = scanner.nextInt();
         System.out.print("\033[H\033[J");
-        System.out.println("1: Сумма");
-        System.out.println("2: Умножение");
-        System.out.println("3: Деление");
-        System.out.print("Выберите действие:");
+        System.out.println("1: РЎСѓРјРјР°");
+        System.out.println("2: РЈРјРЅРѕР¶РµРЅРёРµ");
+        System.out.println("3: Р”РµР»РµРЅРёРµ");
+        System.out.print("Р’С‹Р±РµСЂРёС‚Рµ РґРµР№СЃС‚РІРёРµ:");
         int mode = scanner.nextInt();
         if (mode == 1) System.out.printf("%d+%d=%d", n1, n2, n1 + n2);
         if (mode == 2) System.out.printf("%dx%d=%d", n1, n2, n1 * n2);
