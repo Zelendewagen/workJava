@@ -3,49 +3,49 @@
 import java.util.*;
 
 public class Main {
+    // Пусть дан произвольный список целых чисел
     public static void main(String[] args) {
-        ex();
+        List<Integer> lst = new ArrayList<>();
+        for (int i = 1; i < 11; i++) {
+            lst.add(i);
+        }
+
+        Main testObject = new Main();
+
+        System.out.println(testObject.getAverage(lst));
     }
 
-    public static int GetInt(String x) {
-        boolean temp = false;
-        while (temp != true) {
-            System.out.print("Введите число " + x + ":");
-            Scanner scanner = new Scanner(System.in);
-            try {
-                int n = Integer.parseInt(scanner.nextLine());
-                return n;
-            } catch (NumberFormatException e) {
-                System.out.println("Введено не число !");
-            }
-        }
-        return 0;
+    //     Нужно удалить из него четные числа
+    public List<Integer> removeNegativeValue(List<Integer> list) {
+        List<Integer> resultList = new ArrayList<>();
+        for (int i : list) if (i % 2 != 0) resultList.add(i);
+        return resultList;
     }
 
-    public static void ex() {
-        String dan = "a+b+c + d+c";
-        System.out.println("Дано: " + dan);
-        dan = String.format(dan).replace(" ", "");
-        String[] arr = dan.split("\\+");
-        Map<String, Integer> list = new HashMap<>();
-        String retr = "1";
-        for (String i : arr) {
-            if (list.containsKey(i)) {
-                list.put(i + retr, list.get(i));
-                retr = Integer.toString(Integer.parseInt(retr) + 1);
-                continue;
-            }
-            ;
-            list.put(i, GetInt(i));
-        }
-        System.out.println(list);
-        Collection<Integer> temp = list.values();
-        int summ = 0;
-        for (int i : temp
-        ) {
-            summ += i;
-        }
-        System.out.println(dan + " = " + summ);
+    //
+    // Найти минимальное значение
+    public Integer getMin(List<Integer> list) {
+        int min = list.get(0);
+        for (int i : list) if (i < min) min = i;
+        return min;
     }
+
+    //
+//    // Найти максимальное значение
+    public Integer getMax(List<Integer> list) {
+        int max = list.get(0);
+        for (int i : list) if (i > max) max = i;
+        return max;
+    }
+    //
+//    // Найти среднее значение
+    public Integer getAverage(List<Integer> list) {
+        int avg = list.get(0);
+        for (int i : list) avg += i;
+        System.out.println(avg);
+        System.out.println(list.size());
+        avg /= list.size();
+        return avg;
+    }
+
 }
-
