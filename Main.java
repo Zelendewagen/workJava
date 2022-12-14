@@ -2,50 +2,52 @@
 
 import java.util.*;
 
-public class Main {
-    // Пусть дан произвольный список целых чисел
+public class ZelendewagenHW {
+    // РџСѓСЃС‚СЊ РґР°РЅ РїСЂРѕРёР·РІРѕР»СЊРЅС‹Р№ СЃРїРёСЃРѕРє С†РµР»С‹С… С‡РёСЃРµР»
     public static void main(String[] args) {
         List<Integer> lst = new ArrayList<>();
         for (int i = 1; i < 11; i++) {
             lst.add(i);
         }
 
-        Main testObject = new Main();
+        ZelendewagenHW testObject = new ZelendewagenHW();
 
+        System.out.println(testObject.removeNegativeValue(lst));
+        System.out.println(testObject.getMin(lst));
+        System.out.println(testObject.getMax(lst));
         System.out.println(testObject.getAverage(lst));
     }
 
-    //     Нужно удалить из него четные числа
+    //     РќСѓР¶РЅРѕ СѓРґР°Р»РёС‚СЊ РёР· РЅРµРіРѕ С‡РµС‚РЅС‹Рµ С‡РёСЃР»Р°
     public List<Integer> removeNegativeValue(List<Integer> list) {
         List<Integer> resultList = new ArrayList<>();
         for (int i : list) if (i % 2 != 0) resultList.add(i);
         return resultList;
     }
 
-    //
-    // Найти минимальное значение
+    // РќР°Р№С‚Рё РјРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ
     public Integer getMin(List<Integer> list) {
         int min = list.get(0);
         for (int i : list) if (i < min) min = i;
         return min;
     }
 
-    //
-//    // Найти максимальное значение
+    // РќР°Р№С‚Рё РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ
     public Integer getMax(List<Integer> list) {
         int max = list.get(0);
         for (int i : list) if (i > max) max = i;
         return max;
     }
-    //
-//    // Найти среднее значение
+
+    // РќР°Р№С‚Рё СЃСЂРµРґРЅРµРµ Р·РЅР°С‡РµРЅРёРµ
     public Integer getAverage(List<Integer> list) {
         int avg = list.get(0);
         for (int i : list) avg += i;
-        System.out.println(avg);
-        System.out.println(list.size());
         avg /= list.size();
         return avg;
     }
 
 }
+
+
+
